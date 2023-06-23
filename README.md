@@ -24,7 +24,7 @@ After installing the module, it allows you to send review reminder emails based 
 
 To configure the module, navigate to the admin panel of your Magento 2 store and follow these steps:
 
-1. Go to **Stores** > **Configuration** > **Sales** > **Review Reminder**.
+1. Go to **Stores** > **Configuration** > **Extensions** > **Elgentos/Review Reminder**.
 2. Customize the review link and complaint link URLs to match your store's review and complaint pages.
 3. Configure the email address to be used for each shop.
 4. Adjust the delay period in days after which the review reminder email should be sent.
