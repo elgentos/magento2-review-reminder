@@ -1,6 +1,5 @@
 # Review Reminder Module for Magento 2
 
-## Overview
 The Review Reminder Module for Magento 2 is a customizable tool that enables online shop owners to automate the process of sending review reminders to customers after the shipping method has been created + configurable days. This module provides a convenient way to request feedback and reviews from customers, helping to improve the reputation and credibility of your online store.
 
 ## Features
