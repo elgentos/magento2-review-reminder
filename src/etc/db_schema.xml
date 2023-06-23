@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="elgentos_reviewreminder" engine="innodb" comment="Review Reminders">
+    <column name="entity_id" xsi:type="int" comment="entity_id" nullable="true" identity="true" unsigned="true" padding="10"/>
+    <column name="shipment_id" xsi:type="int" comment="shipment_id" nullable="true"/>
+    <column name="order_id" xsi:type="int" comment="order_id" nullable="true"/>
+    <column name="mail_status" xsi:type="int" comment="mail_send" nullable="true"/>
+    <column name="send_date" xsi:type="datetime" comment="send_date" nullable="true"/>
+    <column name="created_at" xsi:type="datetime" comment="created_at" nullable="true"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="entity_id"/>
+    </constraint>
+  </table>
+</schema>

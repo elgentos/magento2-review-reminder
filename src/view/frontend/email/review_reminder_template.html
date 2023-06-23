@@ -1,0 +1,42 @@
+{{template config_path="design/email/header_template"}}
+
+<h1 class="f-fallback">WIN YOUR PURCHASE AMOUNT BACK.</h1>
+<h2 class="f-fallback">In just 2 minutes!</h2>
+<p class="f-fallback mt-2">Hi {{trans "%customer" customer=$customer}},</p>
+<p class="f-fallback">Congratulations! According to our records, your order {{trans "%order_id" order_id=$incrementId}} has been delivered. We hope you had a great celebration!</p>
+<p class="f-fallback">Thank you for choosing us! Share your feedback and get a chance to win your purchase amount back!</p>
+
+{{layout handle="review_reminder_template" shipmentId=$shipmentId}}
+
+<h2 class="f-fallback mt-2">Share your opinion and win your complete purchase amount back!</h2>
+<p class="f-fallback">Your opinion is valuable! Provide your feedback now and help us improve. As a token of appreciation, you have a chance to win your purchase amount back! We will announce the winner on our <a href="{{customVar code=store_url_instagram}}" target="_blank">Instagram</a> and <a href="{{customVar code=store_url_facebook}}" target="_blank">Facebook page</a>. Follow us there to stay updated on exciting giveaways!</p>
+
+<table class="message" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+        <td class="message_content">
+            <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                    <td class="message_item">
+                        <h2 class="f-fallback c-orange">IMPORTANT</h2>
+                        <h3 class="f-fallback mb-0">Encountered any issues or not satisfied?</h3>
+                        <p class="f-fallback mt-0">Please contact us through the <a href="{{customVar code=customer_service_url_email}}" target="_blank">contact form</a>, and we will provide a suitable solution.</p>
+                        <h3 class="f-fallback mb-0">Questions?</h3>
+                        <p class="f-fallback mt-0">Check our <a href="{{customVar code=customer_service_url_helpdesk}}" target="_blank">helpdesk</a> for answers to commonly asked questions. We are also available via email or phone to assist you!</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<h2 class="f-fallback">Winner of the previous quarter</h2>
+
+<p><img class="" src="{{store_url}}/media/email/review/reviewwinner.jpg" width="300"/></p>
+
+<p><a class="mb-3" href="{{customVar code=store_url_facebook}}" target="_blank"><img src="{{store_url}}/media/email/v1/cvk_nl/follow-facebook.png" width="286"/></a></p>
+<p><a class="mb-3" href="{{customVar code=store_url_instagram}}" target="_blank"><img src="{{store_url}}/media/email/v1/cvk_nl/follow-instagram.png" width="292"/></a></p>
+
+<p class="f-fallback">Until the next celebration!</p>
+<p class="f-fallback">Warm regards,<br>{{var store.frontend_name}}</p>
+
+{{template config_path="design/email/footer_template"}}

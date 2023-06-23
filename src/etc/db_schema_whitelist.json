@@ -1,0 +1,15 @@
+{
+    "elgentos_reviewreminder": {
+        "column": {
+            "entity_id": true,
+            "shipment_id": true,
+            "order_id": true,
+            "mail_status": true,
+            "send_date": true,
+            "created_at": true
+        },
+        "constaint": {
+            "PRIMARY": true
+        }
+    }
+}

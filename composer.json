@@ -1,0 +1,82 @@
+{
+    "name": "elgentos/magento2-review-reminder",
+    "description": "Magento 2 Review reminder",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Nick Ottens",
+            "email": "nick@elgentos.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0|^8.1|^8.2",
+        "ext-json": "*",
+        "magento/framework": "^103.0",
+        "magento/module-amqp": "^100.4",
+        "magento/module-asynchronous-operations": "^100.4",
+        "magento/module-backend": "^102.0",
+        "magento/module-config": "^101.2",
+        "magento/module-cron": "^100.4",
+        "magento/module-email": "^101.1",
+        "magento/module-message-queue": "^100.4",
+        "magento/module-sales": "^103.0",
+        "magento/module-store": "^101.1",
+        "phpseclib/phpseclib": "^3.0.19",
+        "nesbot/carbon": "^2.67"
+    },
+    "require-dev": {
+        "bitexpert/phpstan-magento": "^0.30.1",
+        "elgentos/testing-suite": "^0.1.1",
+        "phpstan/extension-installer": "^1.3",
+        "youwe/coding-standard-magento2": "^2.0.0"
+    },
+    "repositories": {
+        "magento": {
+            "type": "composer",
+            "url": "https://repo.magento.com"
+        }
+    },
+    "archive": {
+        "exclude": [
+            "/.gitignore",
+            "/tests",
+            "/grumphp.yml",
+            "/pdepend.xml",
+            "/phpstan.neon",
+            "/phpunit.xml",
+            "/phpmd.xml",
+            "/phpcs.xml",
+            "/package.json",
+            "/.eslintrc.json",
+            "/.eslintignore"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "elgentos/coding-standard-phpstorm": true,
+            "phpro/grumphp-shim": true,
+            "youwe/testing-suite": true,
+            "magento/composer-dependency-version-audit-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "digitalrevolution/php-codesniffer-baseline": true,
+            "magento/magento-composer-installer": false,
+            "phpstan/extension-installer": true
+        }
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "Elgentos\\ReviewReminder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elgentos\\ReviewReminder\\Test\\": "tests/"
+        }
+    }
+}

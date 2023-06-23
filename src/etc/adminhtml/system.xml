@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <tab id="elgentos" translate="label" sortOrder="10">
+            <label>Elgentos</label>
+        </tab>
+
+        <section id="elgentos" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <resource>Elgentos_ReviewReminder::config</resource>
+            <label>Elgentos Review Reminder</label>
+            <tab>elgentos</tab>
+
+            <group id="review_reminder" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Configurations</label>
+
+                <field id="enabled" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="delay" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Delay</label>
+                    <comment>Setting for sending X number of days after record creation.</comment>
+                    <validate>validate-number</validate>
+                </field>
+
+                <field id="expected_delivery_date" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Expected delivery date</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Setting to not send mail when send date >= expected delivery date</comment>
+                </field>
+
+                <field id="url_review_shop" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Url review shop</label>
+                    <comment>Setting for url to review platform to be determined per shop.</comment>
+                </field>
+
+                <field id="url_complain_shop" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Url complain shop</label>
+                    <comment>Setting for complaints email per shop.</comment>
+                </field>
+
+                <field id="email_sender" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Email sender</label>
+                    <source_model>Elgentos\ReviewReminder\Model\Config\Source\EmailSender</source_model>
+                    <comment>Setting for sender email address per shop</comment>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>

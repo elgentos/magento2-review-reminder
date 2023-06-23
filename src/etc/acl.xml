@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Elgentos_ReviewReminder::ReviewReminder" title="ReviewReminder" translate="title" sortOrder="900">
+                        <resource id="Elgentos_ReviewReminder::ReviewReminders" title="ReviewReminders" translate="title">
+                            <resource id="Elgentos_ReviewReminder::ReviewReminder_save" title="Save" translate="title"/>
+                            <resource id="Elgentos_ReviewReminder::ReviewReminder_delete" title="Delete" translate="title"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

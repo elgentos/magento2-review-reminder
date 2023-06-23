@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+    <topic name="elgentos.review.reminder.push" request="string">
+        <handler name="ElgentosReviewReminderPush" type="Elgentos\ReviewReminder\Consumer\ReviewReminderMailConsumer" method="processMessage"/>
+    </topic>
+</config>

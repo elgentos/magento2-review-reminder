@@ -1,0 +1,10 @@
+vendor
+.idea
+.php72
+.php73
+.php74
+.php80
+.php_cs.cache
+.phpunit.cache
+node_modules
+composer.lock

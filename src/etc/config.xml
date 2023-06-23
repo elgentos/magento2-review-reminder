@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <elgentos>
+            <review_reminder>
+                <enabled>0</enabled>
+                <delay>0</delay>
+                <url_review_shop>#</url_review_shop>
+                <url_complain_shop>#</url_complain_shop>
+                <email_sender>general</email_sender>
+            </review_reminder>
+        </elgentos>
+    </default>
+</config>

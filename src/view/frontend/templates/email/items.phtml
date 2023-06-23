@@ -1,0 +1,103 @@
+<?php
+
+/**
+ * @var Items $block
+ * @var Escaper $escaper
+ */
+
+use Elgentos\ReviewReminder\Block\Email\Items;
+use Magento\Framework\Escaper;
+
+$items = $block->getItems((int) $block->getData('shipment_id'));
+?>
+
+<p class="f-fallback sub mb-3">
+    <?= $block->escapeHtml(
+        __('Click on your review and you will be redirected to our review platform. It only takes a minute and it greatly helps us!')
+    )?>
+</p>
+
+<table class="review" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation" dir="rtl">
+    <tr>
+        <td align="center" valign="top" width="30%" class="reviewColumnContainer">
+            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                <tr>
+                    <td valign="top" align="left">
+                        <a class="star" href="<?= $escaper->escapeHtml($block->getReviewUrl()) ?>" target="_blank">
+                            ★★★★★
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td align="center" valign="top" width="25%" class="reviewColumnContainer">
+            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                <tr>
+                    <td valign="top" align="left">
+                        <a class="star" href="<?= $escaper->escapeHtml($block->getReviewUrl()) ?>" target="_blank">
+                            ★★★★
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td align="center" valign="top" width="20%" class="reviewColumnContainer">
+            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                <tr>
+                    <td valign="top" align="left">
+                        <a class="star" href="<?= $escaper->escapeHtml($block->getReviewUrl()) ?>" target="_blank">
+                            ★★★
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td align="center" valign="top" width="15%" class="reviewColumnContainer">
+            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                <tr>
+                    <td valign="top" align="left">
+                        <a class="star" href="<?= $escaper->escapeHtml($block->getComplainUrl()) ?>" target="_blank">
+                            ★★
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td align="center" valign="top" width="10%" class="reviewColumnContainer">
+            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                <tr>
+                    <td valign="top" align="left">
+                        <a class="star" href="<?= $escaper->escapeHtml($block->getComplainUrl()) ?>" target="_blank">
+                            ★
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<?php
+/*
+ * We can use below in the future when we have the possibility of product reviews
+ */
+
+/*
+<?php if (!empty($items)) : ?>
+    <table>
+        <?php foreach ($items as $item) : ?>
+            <tr>
+                <td width="80%" class="purchase_heading purchase_item">
+                <span class="f-fallback">
+                    <a href="<?= $block->escapeHtml($block->getReviewUrl()) ?>"><?= $block->escapeHtml($item->getName()) ?></a><br>
+                </span>
+                </td>
+                <td width="20%" class="purchase_heading purchase_item align-right">
+                    <span class="f-fallback"><?= (int)$item->getQty() ?> x</span>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+<?php endif; ?>
+*/
+?>
