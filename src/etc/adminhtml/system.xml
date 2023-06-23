@@ -24,12 +24,6 @@
                     <validate>validate-number</validate>
                 </field>
 
-                <field id="expected_delivery_date" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Expected delivery date</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment>Setting to not send mail when send date >= expected delivery date</comment>
-                </field>
-
                 <field id="url_review_shop" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="1">
                     <label>Url review shop</label>
                     <comment>Setting for url to review platform to be determined per shop.</comment>

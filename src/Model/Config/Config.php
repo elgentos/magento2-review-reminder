@@ -16,7 +16,6 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 class Config
 {
     private const XML_PATH_ENABLED = 'elgentos/review_reminder/enabled';
-    private const XML_PATH_EXPECTED_DELIVERY_DATE = 'elgentos/review_reminder/expected_delivery_date';
     private const XML_PATH_DELAY = 'elgentos/review_reminder/delay';
     private const XML_URL_REVIEW_SHOP = 'elgentos/review_reminder/url_review_shop';
     private const XML_EMAIL_SENDER = 'elgentos/review_reminder/email_sender';
@@ -30,13 +29,6 @@ class Config
     {
         return $this->scopeConfig->isSetFlag(
             self::XML_PATH_ENABLED
-        );
-    }
-
-    public function getExpectedDeliveryDateEnabled(): bool
-    {
-        return $this->scopeConfig->isSetFlag(
-            self::XML_PATH_EXPECTED_DELIVERY_DATE
         );
     }
 

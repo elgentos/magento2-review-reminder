@@ -37,21 +37,6 @@ class OrderShipmentSaveAfterObserver implements ObserverInterface
     ) {
     }
 
-    private function getMailStatus(?string $expectedDeliveryDate, string $date): int
-    {
-        if (!$this->config->getExpectedDeliveryDateEnabled() || $expectedDeliveryDate === null) {
-            return MailStatus::MAIL_UNPROCESSED;
-        }
-
-        $expectedDeliveryDate = Carbon::parse($expectedDeliveryDate);
-
-        $sendDate = Carbon::parse($date);
-
-        return $sendDate->isAfter($expectedDeliveryDate)
-            ? MailStatus::MAIL_SKIPPED
-            : MailStatus::MAIL_UNPROCESSED;
-    }
-
     public function execute(Observer $observer): void
     {
         if (!$this->config->getExtensionEnabled()) {
@@ -71,10 +56,7 @@ class OrderShipmentSaveAfterObserver implements ObserverInterface
                 [
                     ReviewReminderInterface::SHIPMENT_ID => $data['id'],
                     ReviewReminderInterface::ORDER_ID => $data['order_id'],
-                    ReviewReminderInterface::MAIL_STATUS => $this->getMailStatus(
-                        $shipment->getOrder()->getData('expected_delivery_date'),
-                        $data['created_at']
-                    ),
+                    ReviewReminderInterface::MAIL_STATUS => MailStatus::MAIL_UNPROCESSED,
                     ReviewReminderInterface::SEND_DATE => $sendDate->format(self::FORMAT_DATE),
                     ReviewReminderInterface::CREATED_AT => $data['created_at']
                 ]
