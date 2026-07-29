@@ -2,7 +2,7 @@
     "name": "elgentos/magento2-review-reminder",
     "description": "Magento 2 Review reminder",
     "type": "magento2-module",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Nick Ottens",
