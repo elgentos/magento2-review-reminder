@@ -11,7 +11,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": "^8.0|^8.1|^8.2",
+        "php": "^8.0|^8.1|^8.2|^8.3",
         "ext-json": "*",
         "magento/framework": "^103.0",
         "magento/module-amqp": "^100.4",
@@ -24,7 +24,7 @@
         "magento/module-sales": "^103.0",
         "magento/module-store": "^101.1",
         "phpseclib/phpseclib": "^3.0.19",
-        "nesbot/carbon": "^2.67"
+        "nesbot/carbon": "^2.67 || ^3.0"
     },
     "require-dev": {
         "bitexpert/phpstan-magento": "^0.30.1",
