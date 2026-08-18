@@ -40,6 +40,12 @@
                     <comment>Setting for sender email address per shop</comment>
                 </field>
 
+                <field id="email_template" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <comment>Template used for the review reminder email. Create a custom template under Marketing &gt; Email Templates to override without code changes.</comment>
+                </field>
+
             </group>
         </section>
     </system>

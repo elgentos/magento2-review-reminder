@@ -8,6 +8,7 @@
                 <url_review_shop>#</url_review_shop>
                 <url_complain_shop>#</url_complain_shop>
                 <email_sender>general</email_sender>
+                <email_template>elgentos_review_reminder_template</email_template>
             </review_reminder>
         </elgentos>
     </default>

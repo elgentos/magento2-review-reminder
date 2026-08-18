@@ -20,6 +20,8 @@ class Config
     private const XML_URL_REVIEW_SHOP = 'elgentos/review_reminder/url_review_shop';
     private const XML_EMAIL_SENDER = 'elgentos/review_reminder/email_sender';
     private const XML_URL_COMPLAIN_SHOP = 'elgentos/review_reminder/url_complain_shop';
+    private const XML_EMAIL_TEMPLATE = 'elgentos/review_reminder/email_template';
+    private const DEFAULT_EMAIL_TEMPLATE = 'elgentos_review_reminder_template';
 
     public function __construct(private readonly ScopeConfigInterface $scopeConfig)
     {
@@ -108,5 +110,20 @@ class Config
         }
 
         return $emailSender;
+    }
+
+    public function getEmailTemplate(int $storeId = 0): string
+    {
+        $emailTemplate = $this->scopeConfig->getValue(
+            self::XML_EMAIL_TEMPLATE,
+            ScopeInterface::SCOPE_STORE,
+            $storeId
+        );
+
+        if (empty($emailTemplate)) {
+            return self::DEFAULT_EMAIL_TEMPLATE;
+        }
+
+        return (string)$emailTemplate;
     }
 }
