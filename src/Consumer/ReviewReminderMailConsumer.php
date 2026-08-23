@@ -24,8 +24,6 @@ use Magento\Store\Model\StoreManagerInterface;
 
 class ReviewReminderMailConsumer
 {
-    private const MAIL_TEMPLATE = 'elgentos_review_reminder_template';
-
     public function __construct(
         private readonly OrderRepositoryInterface $orderRepository,
         private readonly Json $json,
@@ -48,7 +46,9 @@ class ReviewReminderMailConsumer
             $shipment = $this->shipmentRepository->get((int)$data['shipment_id']);
 
             $transportBuilder = $this->transportBuilder
-                ->setTemplateIdentifier(self::MAIL_TEMPLATE)
+                ->setTemplateIdentifier(
+                    $this->config->getEmailTemplate((int)$order->getStoreId())
+                )
                 ->setTemplateVars(
                     [
                         'customer' => $order->getCustomerName(),
