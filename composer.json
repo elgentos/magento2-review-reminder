@@ -27,9 +27,11 @@
         "nesbot/carbon": "^2.67 || ^3.0"
     },
     "require-dev": {
-        "bitexpert/phpstan-magento": "^0.30.1",
+        "bitexpert/phpstan-magento": "^0.44",
         "elgentos/testing-suite": "^0.1.1",
-        "phpstan/extension-installer": "^1.3",
+        "magento/magento-coding-standard": "^41",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^2.1",
         "youwe/coding-standard-magento2": "^2.0.0"
     },
     "repositories": {

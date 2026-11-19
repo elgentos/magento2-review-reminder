@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace Elgentos\ReviewReminder\Logger;
 
-use Monolog\Logger;
+use Magento\Framework\Logger\Monolog;
 
-class MailLogger extends Logger
+class MailLogger extends Monolog
 {
 }
